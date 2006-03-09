@@ -2,6 +2,9 @@ Revision history for Perl extension Module::Build.
 
 0.2613
 
+ - Since release 0.2612 fixed YAML problems, we now remove the
+   restriction that YAML's version be less than 0.50.
+
  - Integrated a change from the mainline branch that lets the
    'passthrough' Makefile.PL check properly whether Module::Build was
    successfully installed.
