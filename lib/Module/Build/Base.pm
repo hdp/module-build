@@ -1809,9 +1809,9 @@ sub htmlify_pods {
     my @dirs = File::Spec->splitdir( File::Spec->canonpath( $path ) );
     pop( @dirs ) if $dirs[-1] eq File::Spec->curdir;
 
-    my $fulldir = File::Spec::Unix->catfile($htmldir, @rootdirs, @dirs);
-    my $outfile = File::Spec::Unix->catfile($fulldir, $name . '.html');
-    my $infile  = File::Spec::Unix->abs2rel($pod);
+    my $fulldir = File::Spec->catfile($htmldir, @rootdirs, @dirs);
+    my $outfile = File::Spec->catfile($fulldir, $name . '.html');
+    my $infile  = File::Spec->abs2rel($pod);
 
     return if $self->up_to_date($infile, $outfile);
 

@@ -9,6 +9,10 @@ Revision history for Perl extension Module::Build.
    'passthrough' Makefile.PL check properly whether Module::Build was
    successfully installed.
 
+ - Integrated a Windows fix from the mainline branch that corrects an
+   error building HTML manual pages.
+   (http://rt.cpan.org/Public/Bug/Display.html?id=18076)
+
 0.2612  Thu Mar  2 22:27:37 CST 2006
 
  - We now use File::Spec->tmpdir rather than the local _build/
