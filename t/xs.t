@@ -12,6 +12,8 @@ use Module::Build;
     plan skip_all => 'C_support not enabled';
   } elsif ( !$have_c_compiler ) {
     plan skip_all => 'C_support enabled, but no compiler found';
+  } elsif ( $^O eq 'VMS' ) {
+    plan skip_all => 'Child test output confuses harness';
   } else {
     plan tests => 22;
   }
@@ -109,7 +111,7 @@ $dist->remove;
 
 # Try a XS distro with a deep namespace
 
-$dist = DistGen->new( name => 'Simple::With::Deep::Namespace',
+$dist = DistGen->new( name => 'Simple::With::Deep::Name',
 		      dir => $tmp, xs => 1 );
 $dist->regen;
 chdir( $dist->dirname ) or die "Can't chdir to '@{[$dist->dirname]}': $!";
